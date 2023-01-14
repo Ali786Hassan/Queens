@@ -6,6 +6,7 @@ import Search from '../App/Screens/Search';
 import Card from '../App/Screens/Card';
 import Profile from '../App/Screens/Profile';
 import Setting from '../App/Screens/Setting';
+import Tabs from './Tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
 const Drawer = createDrawerNavigator();
@@ -22,7 +23,7 @@ const AppStack =() => {
             drawerContentContainerStyle:{borderRadius:10},
             drawerLabelStyle:{marginLeft:10,fontSize:15,fontWeight:'bold'}
             }}>
-            <Drawer.Screen name='Home' component={Home} options={{
+            <Drawer.Screen name='Home' component={Tabs} options={{
                 drawerIcon:({color}) => {
                   <Ionicons name='home' size={22} color={color} style={{marginLeft:10}}/>
                 }

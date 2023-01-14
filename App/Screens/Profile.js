@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text,StatusBar, View ,TouchableOpacity} from 'react-native'
+import { SafeAreaView, StyleSheet, Text,StatusBar, View ,TouchableOpacity, ScrollView} from 'react-native'
 import React from 'react'
 import {Avatar, Caption, Title, TouchableRipple} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -6,6 +6,7 @@ import colors from '../Assets/Config/colors';
 const Profile =({navigation}) => {
   return(
     <SafeAreaView style={styles.container}>
+      
       <StatusBar translucent backgroundColor="#D3D3D3" />
       {/* <TouchableOpacity onPress={() => navigation.openDrawer()}>
         <View style={{width:35,height:35,marginTop:40,marginLeft:10,backgroundColor:'#f8f4f4',borderRadius:5,elevation:4}} >
@@ -21,6 +22,7 @@ const Profile =({navigation}) => {
       <Icon name="account-edit" color="#000" size={30} style={{marginLeft:5,marginTop:2}}/>
         </View>
       </TouchableOpacity>
+      <ScrollView>
     <View style={styles.userinfo}>
       <View style={{marginTop:5,marginLeft:10}}>
         <Avatar.Image
@@ -59,8 +61,8 @@ const Profile =({navigation}) => {
           <Caption>Orders</Caption>
         </View>
       </View>
-
       <View style={styles.menuWrapper}>
+      
         <TouchableRipple onPress={() => {}}>
           <View style={styles.menuItem}>
             <Icon name='heart-outline' color="#FF0000" size={25}/>
@@ -91,7 +93,8 @@ const Profile =({navigation}) => {
             <Text style={styles.menuItemText}>Settings</Text>
           </View>
         </TouchableRipple> */}
-      </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -99,7 +102,8 @@ const Profile =({navigation}) => {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'#ffffff'
+    backgroundColor:'#ffffff',
+   
   },
   userinfo:{
     paddingHorizontal:40,

@@ -12,7 +12,7 @@ import {
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Bellicon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Navicon from 'react-native-vector-icons/Fontisto';
+import DetailsScreen from './DetailsScreen';
 import colors from '../Assets/Config/colors';
 import Plants from '../Screens/Plants';
 const width = Dimensions.get('window').width / 2 - 30;
