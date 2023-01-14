@@ -8,8 +8,8 @@ import colors from "../App/Assets/Config/colors";
 export default function RootNavigator(){
     return(
         <NavigationContainer>
-            {/* <AuthStack/> */}
-            <AppStack/>
+            <AuthStack/>
+            {/* <AppStack/> */}
             <StatusBar
       barStyle="light-content"
       backgroundColor={colors.statusbar}

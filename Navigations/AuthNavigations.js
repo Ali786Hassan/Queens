@@ -35,9 +35,10 @@ export default function AuthStack(){
             <Auth.Screen
              name='EditProfile' component={EditProfile} options={{headerShown:false}}/>
 
-
             <Auth.Screen
              name='Home' component={RootTab} options={{headerShown:false}}/>
         </Auth.Navigator>
-    )
-}
+         
+    );
+};
+
