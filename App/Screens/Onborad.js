@@ -6,7 +6,7 @@ import Login from './Login';
 const Onboard = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
-      <StatusBar translucent backgroundColor="rgba(0,0,0,0)" />
+      <StatusBar translucent backgroundColor="#4C7FC1" />
       <ImageBackground
         style={{flex: 1}}
         source={require('../Assets/Images/android.png')}>

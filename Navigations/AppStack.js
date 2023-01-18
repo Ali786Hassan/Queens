@@ -8,7 +8,7 @@ import Profile from '../App/Screens/Profile';
 import Setting from '../App/Screens/Setting';
 import Tabs from './Tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'
-
+import AuthStack from './AuthNavigations';
 const Drawer = createDrawerNavigator();
 
 const AppStack =() => {
@@ -28,6 +28,8 @@ const AppStack =() => {
                   <Ionicons name='home' size={22} color={color} style={{marginLeft:10}}/>
                 }
             }} />
+            <Drawer.Screen name='AuthStack' component={AuthStack} 
+            />
             <Drawer.Screen name='Search' component={Search} 
             />
             <Drawer.Screen name='Card' component={Card} />

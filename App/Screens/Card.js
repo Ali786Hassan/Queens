@@ -1,11 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-
-export default function Card() {
+import Arrowleft from 'react-native-vector-icons/Feather';
+export default function Card({navigation}) {
   return (
-    <View style={{flex:1,backgroundColor:'#fff'}}>
-      <Text>Setting</Text>
-    </View>
+    <SafeAreaView style={{flex:1,backgroundColor:"#fff"}}>
+         <Arrowleft
+                    onPress={()=>  navigation.goBack()} 
+                    style={{marginTop:10,alignSelf:'center',marginTop:60,marginLeft:-330}}
+                    name="arrow-left-circle"
+                    color={'black'}
+                    size={30}
+                />
+        <View style={{justifyContent:'center',alignItems:'center'}}>
+          <Text>Card screen</Text>
+        </View>
+    </SafeAreaView>
   )
 }
 

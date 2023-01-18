@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, SafeAreaView, Image, Text, StyleSheet} from 'react-native';
+import {View, SafeAreaView, Image, Text, StyleSheet,TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import colors from '../Assets/Config/colors';
 const DetailsScreen = ({navigation, route}) => {
@@ -12,8 +12,8 @@ const DetailsScreen = ({navigation, route}) => {
         backgroundColor: colors.white,
       }}>
       <View style={style.header}>
-        <Icon name="arrow-back" size={28} onPress={() => navigation.goBack()} />
-        <Icon name="shopping-cart" size={28} />
+        <Icon name="arrow-back" size={28} color={'#000'} onPress={() => navigation.goBack()} />
+        <Icon name="shopping-cart" size={28} color={'#000'} onPress={() => navigation.navigate('Card')} />
       </View>
       <View style={style.imageContainer}>
         <Image source={plants.img} style={{resizeMode: 'contain', flex: 1}} />
@@ -26,7 +26,7 @@ const DetailsScreen = ({navigation, route}) => {
             alignItems: 'flex-end',
           }}>
           <View style={style.line} />
-          <Text style={{fontSize: 18, fontWeight: 'bold'}}>Best choice</Text>
+          <Text style={{fontSize: 18, fontWeight: 'bold',color:'#000'}}>Best choice</Text>
         </View>
         <View
           style={{
@@ -49,8 +49,8 @@ const DetailsScreen = ({navigation, route}) => {
             </Text>
           </View>
         </View>
-        <View style={{paddingHorizontal: 20, marginTop: 10}}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>About</Text>
+        <View style={{paddingHorizontal: 20, marginTop: 10,}}>
+          <Text style={{fontSize: 20, fontWeight: 'bold',color:'#000'}}>About</Text>
           <Text
             style={{
               color: 'grey',
@@ -87,12 +87,12 @@ const DetailsScreen = ({navigation, route}) => {
               </View>
             </View>
 
-            <View style={style.buyBtn}>
+            <TouchableOpacity style={style.buyBtn}>
               <Text
                 style={{color: colors.white, fontSize: 18, fontWeight: 'bold'}}>
                 Buy
               </Text>
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -103,19 +103,19 @@ const DetailsScreen = ({navigation, route}) => {
 const style = StyleSheet.create({
   header: {
     paddingHorizontal: 20,
-    marginTop: 20,
+    marginTop: 40,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   imageContainer: {
-    flex: 0.45,
+    flex: 0.5,
     marginTop: 20,
     justifyContent: 'center',
     alignItems: 'center',
   },
   detailsContainer: {
     flex: 0.55,
-    backgroundColor: colors.light1,
+    backgroundColor: colors.white,
     marginHorizontal: 7,
     marginBottom: 7,
     borderRadius: 20,
@@ -142,13 +142,13 @@ const style = StyleSheet.create({
   buyBtn: {
     width: 130,
     height: 50,
-    backgroundColor: colors.green,
+    backgroundColor: colors.Google1,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
   },
   priceTag: {
-    backgroundColor: colors.green,
+    backgroundColor: colors.Google1,
     width: 80,
     height: 40,
     justifyContent: 'center',

@@ -6,7 +6,7 @@ const plants = [
       like: true,
       img: require('../Assets/Images/shoes1.png'),
       about:
-        'Succulent Plantis one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
+        'Succulent shoes one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
     },
   
     {
@@ -16,16 +16,16 @@ const plants = [
       like: false,
       img: require('../Assets/Images/shoes2.png'),
       about:
-        'Dragon Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
+        'Jogers shoes one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
     },
     {
       id: 3,
-      name: 'Ravenea Shoes',
+      name: 'Simple Shoes',
       price: '25.99',
       like: false,
       img: require('../Assets/Images/shoes3.png'),
       about:
-        'Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
+        'Simple shoes one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
     },
   
     {
@@ -35,25 +35,25 @@ const plants = [
       like: true,
       img: require('../Assets/Images/shoes7.png'),
       about:
-        'Potted Plant Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
+        'Jogers shoes Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
     },
     {
       id: 5,
-      name: 'Ravenea Plant',
+      name: 'Ravenea shoes',
       price: '50.99',
       like: true,
       img: require('../Assets/Images/shoes5.png'),
       about:
-        'Potted Plant Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
+        'Ravenea shoes one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
     },
     {
       id: 6,
-      name: 'Dragon Plant',
+      name: 'Dragon shoes',
       price: '50.99',
       like: false,
       img: require('../Assets/Images/shoes4.png'),
       about:
-        'Potted Plant Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
+        'Dragon shoes Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.',
     },
   ];
   
