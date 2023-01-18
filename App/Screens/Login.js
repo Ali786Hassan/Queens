@@ -1,18 +1,21 @@
 import React from 'react';
-import { View,StyleSheet,ImageBackground,Text, TextInput,TouchableOpacity,Image,StatusBar} from 'react-native';
+import { View,StyleSheet,ImageBackground,Text,Dimensions, TextInput,TouchableOpacity,SafeAreaView,Image,StatusBar} from 'react-native';
 import Colors from '../Assets/Config/colors';
 import Mail from 'react-native-vector-icons/Entypo';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Usericon from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Arrowleft from 'react-native-vector-icons/Feather';
+// const width = Dimensions.get('window').width ;
+const {width} = Dimensions.get('screen');
+const {height} = Dimensions.get('screen');
 function Login({navigation}) {
     return (
-        
+        <SafeAreaView style={styles.con}>
         <ImageBackground
-        style={{width:435,height:250}}
+        style={{width:435,height:310}}
         source={require('../Assets/Images/Rectangle.png')}>
-        <StatusBar backgroundColor="#4C7FC1" />
+         <StatusBar backgroundColor="#4C7FC1" />
         <Arrowleft
                     onPress={()=>  navigation.goBack()} 
                     style={{marginTop:10,alignSelf:'center',marginTop:60,marginLeft:-330}}
@@ -21,7 +24,7 @@ function Login({navigation}) {
                     size={30}
                 />
           <Usericon
-                    style={{alignSelf:'center',marginTop:-30}}
+                    style={{alignSelf:'center',marginTop:10}}
                     name="user"
                     color={'white'}
                     size={100}
@@ -94,19 +97,24 @@ function Login({navigation}) {
         </TouchableOpacity>
           </View>
         </ImageBackground>
-       
+        </SafeAreaView>
     );
 }
 const styles = StyleSheet.create({
     container:{
         width:'100%',
-        height:'55%',
+        height:'40%',
         backgroundColor:'#ffffff',
-        marginTop:60,
+        marginTop:90,
         borderTopLeftRadius:30,
-        borderTopRightRadius:30
+        borderTopRightRadius:30,
     },
-    
+    con:{
+        flex:1,
+        width,
+        height,
+        backgroundColor:"#fff",
+    },
     text:{
         fontSize:25,
         fontWeight:'bold',
@@ -120,20 +128,10 @@ const styles = StyleSheet.create({
         color:'white',
         marginTop:-5
     },
-    input:{
-        backgroundColor:'#f9f9f9',
-        width:'90%',
-        height:60,
-        marginLeft:20,
-        marginTop:10,
-        borderRadius:20,
-        borderColor:'gray',
-        borderWidth:2 
-    },
     input2:{
-        borderWidth:2,
+    borderWidth:2,
     borderColor:"#AAAAAA",
-    backgroundColor:'#f9f9f9',
+    backgroundColor:'#ffff',
     marginHorizontal:20,
     borderRadius:12,
     marginBottom:20,
@@ -142,6 +140,7 @@ const styles = StyleSheet.create({
     alignContent:"center",
     alignItems:"center",
     paddingLeft:15,
+    elevation:3,
     },
     btn:{
         backgroundColor:'#186DEE',
