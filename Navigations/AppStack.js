@@ -4,16 +4,15 @@ import Home from '../App/Screens/Home';
 import CustomDrawer from '../App/Components/CustomDrawer';
 import Search from '../App/Screens/Search';
 import Card from '../App/Screens/Card';
-import Profile from '../App/Screens/Profile';
 import Setting from '../App/Screens/Setting';
 import Tabs from './Tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import AuthStack from './AuthNavigations';
 const Drawer = createDrawerNavigator();
 
 const AppStack =() => {
     return(
-
+        
         <Drawer.Navigator drawerContent={props => <CustomDrawer {...props}/>} 
         screenOptions={{
             headerShown: false,
@@ -30,10 +29,17 @@ const AppStack =() => {
             }} />
             <Drawer.Screen name='AuthStack' component={AuthStack} 
             />
-            <Drawer.Screen name='Search' component={Search} 
+            <Drawer.Screen name='Search' component={Search} options={{
+                drawerIcon:({color}) => {
+                  <Ionicons name='search' size={22} color={color} style={{marginLeft:10}}/>
+                }
+            }}
             />
-            <Drawer.Screen name='Card' component={Card} />
-            <Drawer.Screen name='Profile' component={Profile}/>
+            <Drawer.Screen name='Card' component={Card} options={{
+                drawerIcon:({color}) => {
+                  <Ionicons name='card' size={22} color={color} style={{marginLeft:10}}/>
+                }
+            }} />
             <Drawer.Screen name='Setting' component={Setting}/>
         </Drawer.Navigator>
     );

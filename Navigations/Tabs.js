@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import Home from '../App/Screens/Home';
 import Search from '../App/Screens/Search';
 import Card from '../App/Screens/Card';
-import Profile from '../App/Screens/Profile';
+import Setting from '../App/Screens/Setting';
 
 const Tab = createBottomTabNavigator();
 
@@ -68,7 +68,7 @@ export default function RootTab(){
           }}
           
           />
-        <Tab.Screen name='Setting' component={Card} 
+        <Tab.Screen name='Card' component={Card} 
           options={{
             headerShown:false,
             tabBarIcon:({focused}) =>(
@@ -89,13 +89,13 @@ export default function RootTab(){
           }}
           
         />
-        <Tab.Screen name='Profile' component={Profile}
+        <Tab.Screen name='Setting' component={Setting}
         options={{
           headerShown:false,
           tabBarIcon:({focused}) =>(
             <View>
               <Image   
-              source={require('../App/Assets/Images/pro.png')}
+              source={require('../App/Assets/Images/setting2.png')}
               resizeMode='contain'
               style={{
                 width:23,
@@ -104,7 +104,7 @@ export default function RootTab(){
                 alignSelf:'center'
               }}
               />
-              <Text style={{color:'white',fontSize:12}}>Profile</Text>
+              <Text style={{color:'white',fontSize:12}}>Setting</Text>
             </View>
           ),
         }}

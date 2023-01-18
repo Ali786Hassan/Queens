@@ -5,53 +5,17 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import colors from '../Assets/Config/colors';
 import RBSheet from 'react-native-raw-bottom-sheet';
-// import BottomSheet from '@gorhom/bottom-sheet';
 import React,{useRef,useMemo,useCallback} from 'react';
-// import Animated from 'react-native-reanimated';
-// import BottomSheet from 'reanimated-bottom-sheet';
-// import React,{useCallback,useMemo,useRef} from 'react'
-
 
 
 const EditProfile = ({navigation}) => {
-  // const BottomSheetRef = useRef(null);
   const snapPoints = useMemo( () => ['25%' , '40%'], []);
 
  // callbacks
   const handleSheetChange = useCallback( index => {
     console.log(index);
   }, []);
-  // const renderInner = () => (
-  //   <View style={styles.panel}>
-  //     <View style={{alignItems: 'center'}}>
-  //       <Text style={styles.panelTitle}>Upload Photo</Text>
-  //       <Text style={styles.panelSubtitle}>Choose Your Profile Picture</Text>
-  //     </View>
-  //     <TouchableOpacity style={styles.panelButton} onPress={takePhotoFromCamera}>
-  //       <Text style={styles.panelButtonTitle}>Take Photo</Text>
-  //     </TouchableOpacity>
-  //     <TouchableOpacity style={styles.panelButton} onPress={choosePhotoFromLibrary}>
-  //       <Text style={styles.panelButtonTitle}>Choose From Library</Text>
-  //     </TouchableOpacity>
-  //     <TouchableOpacity
-  //       style={styles.panelButton}
-  //       onPress={() => this.bs.current.snapTo(1)}>
-  //       <Text style={styles.panelButtonTitle}>Cancel</Text>
-  //     </TouchableOpacity>
-  //   </View>
-  // );
-     
   
-
-  // const renderHeader = () => (
-  //   <View style={styles.header}>
-  //     <View style={styles.panelHeader}>
-  //       <View style={styles.panelHandle}></View>
-  //     </View>
-  //   </View>
-  // );
-  // bs = React.createRef();
-  // fall = new Animated.Value(1);
   const refRBSheet = useRef();
   return (
     <View style={styles.container}>
@@ -201,12 +165,6 @@ panel: {
   padding: 20,
   backgroundColor: '#FFFFFF',
   paddingTop: 20,
-  // borderTopLeftRadius: 20,
-  // borderTopRightRadius: 20,
-  // shadowColor: '#000000',
-  // shadowOffset: {width: 0, height: 0},
-  // shadowRadius: 5,
-  // shadowOpacity: 0.4,
 },
 panelButtonTitle: {
     fontSize: 20,

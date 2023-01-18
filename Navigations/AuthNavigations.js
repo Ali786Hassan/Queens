@@ -7,7 +7,7 @@ import Reset from '../App/Screens/Reset';
 import DetailsScreen from '../App/Screens/DetailsScreen';
 import RootTab from '../Navigations/Tabs';
 import AppStack from '../Navigations/AppStack';
-import EditProfile from '../App/Screens/EditProfile';
+import Setting from '../App/Screens/Setting';
 
 
 
@@ -31,9 +31,9 @@ export default function AuthStack(){
 
              <Auth.Screen
              name='DetailsScreen' component={DetailsScreen} options={{headerShown:false}}/>
-
-            <Auth.Screen
-             name='EditProfile' component={EditProfile} options={{headerShown:false}}/>
+             
+             <Auth.Screen
+             name='Setting' component={Setting} options={{headerShown:false}}/>
 
             <Auth.Screen
              name='Home' component={RootTab} options={{headerShown:false}}/>

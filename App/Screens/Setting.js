@@ -1,16 +1,8 @@
-import React, { useState } from 'react';
-import {
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  Switch,
-} from 'react-native';
+import React, { useState,useRef,useMemo,useCallback } from 'react';
+import {StyleSheet,SafeAreaView,ScrollView, View,Text,Image,TouchableOpacity,Switch} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
-
+import Arrowleft from 'react-native-vector-icons/Feather';
+import RBSheet from 'react-native-raw-bottom-sheet';
 const SECTIONS = [
   {
     header: 'Preferences',
@@ -36,18 +28,67 @@ const SECTIONS = [
 ];
 
 
-export default function Setting() {
+export default function Setting({navigation}) {
   const [form, setForm] = useState({
     language: 'English',
     darkMode: true,
     wifi: false,
   });
+  const snapPoints = useMemo( () => ['25%' , '40%'], []);
 
+ // callbacks
+  const handleSheetChange = useCallback( index => {
+    console.log(index);
+  }, []);
+  const refRBSheet = useRef();
   return (
     <SafeAreaView style={{ backgroundColor: '#ffff' }}>
+      <RBSheet 
+        ref={refRBSheet}
+        closeOnPressMask={false}
+        closeOnDragDown={true}
+        snapPoints={snapPoints}
+        onChange={handleSheetChange}
+        height={300}
+        borderTopLeftRadius={30}
+        borderTopRightRadius={30}
+        customStyles={{
+          wrapper: {
+            // borderTopLeftRadius:30,
+            // borderTopRightRadius:30,
+          },
+          draggableIcon: {
+            backgroundColor: "#000"
+          }
+        }}
+      >
+        <View style={{alignItems: 'center'}}>
+        <Text style={styles.panelTitle}>Upload Photo</Text>
+        <Text style={styles.panelSubtitle}>Choose Your Profile Picture</Text>
+      </View>
+       <TouchableOpacity style={styles.panelButton}>
+         <Text style={styles.panelButtonTitle}>Take Photo</Text>
+       </TouchableOpacity>
+       <TouchableOpacity style={styles.panelButton} >
+         <Text style={styles.panelButtonTitle}>Choose From Library</Text>
+       </TouchableOpacity>
+       <TouchableOpacity  onPress={() => refRBSheet.current.close()}
+         style={styles.panelButton}
+         >
+         <Text style={styles.panelButtonTitle}>Cancel</Text>
+       </TouchableOpacity>
+
+      </RBSheet>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={{marginTop:10,justifyContent:'center',alignItems:'center'}}>
           <Text style={{fontSize: 32,fontWeight: '700',color:'#333',}}>Settings</Text>
+          <Arrowleft
+                    onPress={()=>  navigation.goBack()} 
+                    style={{marginTop:-30,alignSelf:'center',marginLeft:-360}}
+                    name="arrow-left-circle"
+                    color={'black'}
+                    size={30}
+                />
         </View>
 
         <View style={styles.profile}>
@@ -62,9 +103,8 @@ export default function Setting() {
           <Text style={styles.profileEmail}>ali@mail.com</Text>
 
           <TouchableOpacity
-            onPress={() => {
-              // handle onPress
-            }}>
+            onPress={() => refRBSheet.current.open()}
+           >
             <View style={styles.profileAction}>
               <Text style={styles.profileActionText}>Edit Profile</Text>
 
@@ -240,4 +280,35 @@ const styles = StyleSheet.create({
     flexShrink: 1,
     flexBasis: 0,
   },
+  panel: {
+    padding: 20,
+    backgroundColor: '#FFFFFF',
+    paddingTop: 20,
+  },
+  panelButtonTitle: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      marginTop:10,
+      color: 'white',
+    },
+    panelTitle: {
+      fontSize: 27,
+      height: 35,
+    },
+    panelSubtitle: {
+      fontSize: 14,
+      color: 'gray',
+      height: 30,
+      marginBottom: 10,
+    },
+    panelButton: {
+      //padding: 13,
+      width:'90%',
+      height:50,
+      marginLeft:20,
+      borderRadius: 10,
+      backgroundColor: '#186DEE',
+      alignItems: 'center',
+      marginVertical: 7,
+    },
 });
