@@ -94,13 +94,13 @@ export default function Setting({navigation}) {
         <View style={styles.profile}>
           <Image
             alt=""
-            source={require('../Assets/Images/ali.jpg')}
+            source={require('../Assets/Images/man.png')}
             style={styles.profileAvatar}
           />
 
-          <Text style={styles.profileName}>Ali Hassan</Text>
+          <Text style={styles.profileName}>Hi John</Text>
 
-          <Text style={styles.profileEmail}>ali@mail.com</Text>
+          <Text style={styles.profileEmail}>john@mail.com</Text>
 
           <TouchableOpacity
             onPress={() => refRBSheet.current.open()}

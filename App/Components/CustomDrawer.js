@@ -8,8 +8,8 @@ const CustomDrawer = (props) => {
     <DrawerContentScrollView {...props}
      contentContainerStyle={{backgroundColor:'#186DEE'}} >
         <ImageBackground source={require('../Assets/Images/Rectangle.png')} style={{padding:30,marginTop:-3}}>
-         <Image source={require('../Assets/Images/ali.jpg')} style={styles.image}/>
-          <Text style={{color:'#fff',fontSize:18,marginLeft:-15}}>Ali Hassan</Text>
+         <Image source={require('../Assets/Images/man.png')} style={styles.image}/>
+          <Text style={{color:'#fff',fontSize:18,marginLeft:-4}}>Hi john</Text>
         </ImageBackground>
         <View style={{flex:1,backgroundColor:'#fff',paddingTop:10}}>
         <DrawerItemList {...props}/>
