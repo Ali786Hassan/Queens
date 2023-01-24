@@ -27,7 +27,7 @@ const AppStack =() => {
                   <Ionicons name='home' size={22} color={color} style={{marginLeft:10}}/>
                 }
             }} />
-            <Drawer.Screen name='AuthStack' component={AuthStack} 
+            <Drawer.Screen name='Profile' component={AuthStack} 
             />
             <Drawer.Screen name='Search' component={Search} options={{
                 drawerIcon:({color}) => {

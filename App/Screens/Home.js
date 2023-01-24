@@ -8,6 +8,8 @@ import {
   Image,
   StatusBar,
   Dimensions,
+  KeyboardAvoidingView,
+  ScrollView
 } from 'react-native';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -23,7 +25,8 @@ const Home = ({navigation}) => {
   const CategoryList = () => {
     return (
       
-      <View style={style.categoryContainer}>
+      <View 
+      style={style.categoryContainer}>
         
         <StatusBar translucent backgroundColor="#D3D3D3" />
         {categories.map((item, index) => (
@@ -46,7 +49,7 @@ const Home = ({navigation}) => {
 
   const Card = ({plant}) => {
     return (
-      
+     
       <TouchableOpacity onPress={() => navigation.navigate('DetailsScreen', Plants)}
         activeOpacity={0.8}
         >
@@ -111,11 +114,13 @@ const Home = ({navigation}) => {
           </View>
         </View>
       </TouchableOpacity>
+     
     );
   };
   return (
-    <SafeAreaView
-      style={{flex: 1, paddingHorizontal: 20, backgroundColor: colors.white}}>
+    <KeyboardAvoidingView
+    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    style={{flex: 1, paddingHorizontal: 20, backgroundColor: colors.white}}>
       
         <View style={style.header}>
           <TouchableOpacity style={{marginTop:10,height:30,height:30,}}
@@ -127,7 +132,7 @@ const Home = ({navigation}) => {
         </View>
       <View>
         <Text style={{fontSize: 38, color: colors.Google,fontFamily: 'Feather', fontWeight: 'bold',marginTop:10,marginBottom:-13}}>
-            Hi Ali!
+            Hi John!
           </Text>
           <Text style={{fontSize:15,fontFamily: 'Feather',color:colors.lightgray,marginTop:10,marginBottom:-10}}>Search your favourite shoes here</Text>
       </View>
@@ -154,9 +159,7 @@ const Home = ({navigation}) => {
           return <Card plant={item} />;
         }}
       />
-       
-    </SafeAreaView>
-     
+    </KeyboardAvoidingView>
     
    
   );

@@ -1,5 +1,5 @@
 import react from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from '../App/Screens/Login';
 import Signup from '../App/Screens/Signup';
 import Onboard from '../App/Screens/Onborad';
@@ -9,12 +9,11 @@ import RootTab from '../Navigations/Tabs';
 import AppStack from '../Navigations/AppStack';
 import Setting from '../App/Screens/Setting';
 
-
-
 const Auth = createNativeStackNavigator();
 
 export default function AuthStack(){
     return(
+        
         <Auth.Navigator>
             <Auth.Screen
              name='Onboard' component={Onboard} options={{headerShown:false}}/>
@@ -37,6 +36,7 @@ export default function AuthStack(){
 
             <Auth.Screen
              name='Home' component={RootTab} options={{headerShown:false}}/>
+
         </Auth.Navigator>
          
     );
