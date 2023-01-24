@@ -1,5 +1,8 @@
-![Rectangle (2)](https://user-images.githubusercontent.com/101495422/213405292-26ebaf1e-e1ff-49d8-8f9e-038bf575d6cf.png)
-![Rectangle (3)](https://user-images.githubusercontent.com/101495422/213405351-32788abf-6eca-42e6-b4a3-290836f89112.png)
-![Rectangle (1)](https://user-images.githubusercontent.com/101495422/213405380-a15c3dec-d8d1-4df9-b066-47b2ec95f9c0.png)
-![Rectangle (4)](https://user-images.githubusercontent.com/101495422/213405427-278d1cfd-e556-48e8-92eb-24c62c4acf99.png)
-![Rectangle (5)](https://user-images.githubusercontent.com/101495422/213405476-04de9bb2-24b1-47e2-be85-0ae1c8fc6dcd.png)
+![onboard](https://user-images.githubusercontent.com/101495422/213938715-00428088-c0f6-4468-887e-fd40696c936c.png)
+![login](https://user-images.githubusercontent.com/101495422/213938726-45729760-d2bb-4cb2-989c-37ba17f2683f.png)
+![home](https://user-images.githubusercontent.com/101495422/213938747-bb2326d2-1594-46a5-a6ce-5f2dc27a3c5e.png)
+![drawer](https://user-images.githubusercontent.com/101495422/213938768-14d9e5f4-8fef-45b1-b0f3-45509ee2bf18.png)
+![setting](https://user-images.githubusercontent.com/101495422/213938773-0002bddc-b860-4906-bfdf-78e0bb1fc261.png)
+![signup](https://user-images.githubusercontent.com/101495422/213938785-5f6b5888-f1ad-459f-89be-e60874f30cd6.png)
+![reset](https://user-images.githubusercontent.com/101495422/213938793-3608103f-36a1-407a-80fd-6fccbf5320e1.png)
+
