@@ -1,5 +1,5 @@
-import React from 'react';
-import { View,StyleSheet,ImageBackground,Text,Dimensions, TextInput,TouchableOpacity,SafeAreaView,Image,StatusBar} from 'react-native';
+import React, { useState } from 'react';
+import { View,StyleSheet,ImageBackground,Text,Dimensions,Alert, TextInput,TouchableOpacity,SafeAreaView,Image,StatusBar} from 'react-native';
 import Colors from '../Assets/Config/colors';
 import Mail from 'react-native-vector-icons/Entypo';
 import Fontisto from 'react-native-vector-icons/Fontisto';
@@ -10,6 +10,8 @@ import Arrowleft from 'react-native-vector-icons/Feather';
 const {width} = Dimensions.get('screen');
 const {height} = Dimensions.get('screen');
 function Login({navigation}) {
+ const [firstName, onChangeFirstName] = useState('');
+ const [password, onChangePassword] = useState('');
     return (
         <SafeAreaView style={styles.con}>
         <ImageBackground
@@ -44,8 +46,12 @@ function Login({navigation}) {
                     color:"black"
                 }}
                 keyboardType="email-address"
+                value={firstName}
+                onChangeText={onChangeFirstName}
                 autoCapitalize='none'
                 autoCorrect={false}
+                clearButtonMode="always"
+                onBlur={() => Alert.alert("first name is blured")}
                 />
             </View>
             <Text style={{color:'#AAAAAA',marginLeft:30,fontWeight:'bold',marginBottom:5,marginTop:-5}}> Password</Text>
@@ -62,6 +68,9 @@ function Login({navigation}) {
                     color:"black"
                 }}
                     secureTextEntry={true}
+                    clearButtonMode="always"
+                    value={password}
+                    onChangeText={onChangePassword}
                     textContentType="password"
                 />
                 
