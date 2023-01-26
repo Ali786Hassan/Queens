@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { View,StyleSheet,ImageBackground,Text,Dimensions,Alert, TextInput,TouchableOpacity,SafeAreaView,Image,StatusBar} from 'react-native';
+import { 
+View,StyleSheet,ImageBackground,Text,Dimensions,Alert, 
+TextInput,TouchableOpacity,
+SafeAreaView,Image,StatusBar,ScrollView} from 'react-native';
 import Colors from '../Assets/Config/colors';
 import Mail from 'react-native-vector-icons/Entypo';
 import Fontisto from 'react-native-vector-icons/Fontisto';
@@ -13,9 +16,14 @@ function Login({navigation}) {
  const [firstName, onChangeFirstName] = useState('');
  const [password, onChangePassword] = useState('');
     return (
-        <SafeAreaView style={styles.con}>
+        
+        <SafeAreaView
+        style={styles.con}
+        >
         <ImageBackground
+        
         style={{width:435,height:310}}
+        
         source={require('../Assets/Images/Rectangle.png')}>
          <StatusBar backgroundColor="#4C7FC1" />
         <Arrowleft
@@ -32,7 +40,9 @@ function Login({navigation}) {
                     size={100}
                 />
           <View style={styles.container}>
-            <Text style={styles.text}>Welcome back!</Text>
+            <Text style={styles.text}>
+                Welcome back!
+                </Text>
         <Text style={{color:'#AAAAAA',marginLeft:30,fontWeight:'bold',marginBottom:5,marginTop:15}}> Email</Text>
         <View style={styles.input2}>
                 <Mail
@@ -106,6 +116,7 @@ function Login({navigation}) {
         </TouchableOpacity>
           </View>
         </ImageBackground>
+       
         </SafeAreaView>
     );
 }
@@ -120,8 +131,8 @@ const styles = StyleSheet.create({
     },
     con:{
         flex:1,
-        width,
         height,
+        width,
         backgroundColor:"#fff",
     },
     text:{
