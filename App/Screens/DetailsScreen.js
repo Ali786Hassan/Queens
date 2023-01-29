@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {View, SafeAreaView, Image, Text, StyleSheet,TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import colors from '../Assets/Config/colors';
 const DetailsScreen = ({navigation, route}) => {
   const plants = route.params;
-
+ const [count, setCount] = useState(0);
   return (
     <SafeAreaView
       style={{
         flex: 1,
         backgroundColor: colors.white,
       }}>
-      <View style={style.header}>
+      <TouchableOpacity style={style.header}>
         <Icon name="arrow-back" size={28} color={'#000'} onPress={() => navigation.goBack()} />
         <Icon name="shopping-cart" size={28} color={'#000'} onPress={() => navigation.navigate('Card')} />
-      </View>
-      <View style={style.imageContainer}>
+      </TouchableOpacity>
+      <TouchableOpacity style={style.imageContainer}>
         <Image source={plants.img} style={{resizeMode: 'contain', flex: 1}} />
-      </View>
+      </TouchableOpacity>
       <View style={style.detailsContainer}>
         <View
           style={{
@@ -66,26 +66,32 @@ const DetailsScreen = ({navigation, route}) => {
               flexDirection: 'row',
               justifyContent: 'space-between',
             }}>
-            <View
+            <TouchableOpacity
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
               }}>
-              <View style={style.borderBtn}>
+              <TouchableOpacity 
+              onPress={() => setCount(count -1)}
+              style={style.borderBtn}>
                 <Text style={style.borderBtnText}>-</Text>
-              </View>
+              </TouchableOpacity>
               <Text
                 style={{
                   fontSize: 20,
                   marginHorizontal: 10,
                   fontWeight: 'bold',
+                  color:'black',
+                  marginTop:40,
                 }}>
-                1
+                {count}
               </Text>
-              <View style={style.borderBtn}>
+              <TouchableOpacity
+                onPress={() => setCount(count +1)}
+                style={style.borderBtn}>
                 <Text style={style.borderBtnText}>+</Text>
-              </View>
-            </View>
+              </TouchableOpacity>
+            </TouchableOpacity>
 
             <TouchableOpacity style={style.buyBtn}>
               <Text
@@ -130,20 +136,25 @@ const style = StyleSheet.create({
     marginRight: 3,
   },
   borderBtn: {
-    borderColor: 'grey',
+    borderColor: colors.Google1,
+    backgroundColor: colors.Google1,
     borderWidth: 1,
     borderRadius: 5,
+    elevation:4,
+    marginTop:40,
     justifyContent: 'center',
     alignItems: 'center',
     width: 60,
     height: 40,
   },
-  borderBtnText: {fontWeight: 'bold', fontSize: 28},
+  borderBtnText: {fontWeight: '400', fontSize: 28,color: 'white'},
   buyBtn: {
     width: 130,
     height: 50,
     backgroundColor: colors.Google1,
     justifyContent: 'center',
+    marginTop:40,
+    elevation:4,
     alignItems: 'center',
     borderRadius: 30,
   },
@@ -152,6 +163,7 @@ const style = StyleSheet.create({
     width: 80,
     height: 40,
     justifyContent: 'center',
+    elevation:4,
     borderTopLeftRadius: 25,
     borderBottomLeftRadius: 25,
   },
