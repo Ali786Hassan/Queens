@@ -1,21 +1,32 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Arrowleft from 'react-native-vector-icons/Feather';
-export default function Card({navigation}) {
+import colors from '../Assets/Config/colors';
+import Input from '../Components/Input';
+export default function Card() {
   return (
-    <SafeAreaView style={{flex:1,backgroundColor:"#fff"}}>
-         <Arrowleft
-                    onPress={()=>  navigation.goBack()} 
-                    style={{marginTop:10,alignSelf:'center',marginTop:60,marginLeft:-330}}
-                    name="arrow-left-circle"
-                    color={'black'}
-                    size={30}
-                />
-        <View style={{justifyContent:'center',alignItems:'center'}}>
-          <Text>Card screen</Text>
+    <SafeAreaView style={{backgroundColor:'#fff'}}>
+      <ScrollView
+       contentContainerStyle={{
+        paddingTop: 50,
+        paddingHorizontal:20
+       }}
+      >
+        <Text style={{color:'#000',fontSize:40,fontWeight:'bold'}}>
+          Register
+        </Text>
+        <Text style={{color:'grey',fontSize:18,marginVertical:10}}>
+          Enter your details to Register
+        </Text>
+        <View style={{marginVertical:20}}> 
+        <Input 
+        placeholder="Enter your email address"
+        label="Email" iconName="email-outline"/>
         </View>
+      </ScrollView>
     </SafeAreaView>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  
+})
