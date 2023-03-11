@@ -33,11 +33,11 @@ onFocus = () => {},
        onBlur={()=>{
         setIsFocused(false); 
        }}
-       style={{color: colors.grey,flex:1}}
+       style={{color: colors.black,flex:1}}
        {...props}/>
        {password && (
          <Icon 
-         onPress={() => setHidePassword(hidePassword)}
+         onPress={() => setHidePassword(!hidePassword)}
          style={{fontSize:22,color:colors.darkgray}} 
          name={hidePassword ? 'eye-outline' : 'eye-off-outline'}/>
        )}
@@ -54,10 +54,13 @@ const styles = StyleSheet.create({
     label:{
         marginVertical:5,
         fontSize:14,
+        margin:20,
         color:colors.lightgray,
     },
     inputContainer:{
         height:55,
+        width:'90%',
+        alignSelf:'center',
         backgroundColor:colors.secondary,
         borderRadius:25,
         flexDirection:'row',

@@ -1,10 +1,9 @@
 import React from 'react';
 import { View,StyleSheet,ImageBackground,Text,Dimensions, TextInput,TouchableOpacity,SafeAreaView,Image,StatusBar} from 'react-native';
 import colors from '../Assets/Config/colors';
-import Mail from 'react-native-vector-icons/Entypo';
-import Fontisto from 'react-native-vector-icons/Fontisto';
+import Input from '../Components/Input';
+import Button from '../Components/Button';
 import Usericon from 'react-native-vector-icons/Feather';
-import Entypo from 'react-native-vector-icons/Entypo';
 import Arrowleft from 'react-native-vector-icons/Feather';
 const {width} = Dimensions.get('screen');
 const {height} = Dimensions.get('screen');
@@ -12,7 +11,7 @@ function Signup({navigation}) {
     return (
         <SafeAreaView style={styles.con}>
         <ImageBackground
-        style={{width:435,height:310}}
+        style={{width,height:height/2,}}
         source={require('../Assets/Images/Rectangle.png')}>
         <StatusBar backgroundColor="#4C7FC1" />
         <Arrowleft
@@ -30,7 +29,17 @@ function Signup({navigation}) {
                 />
           <View style={styles.container}>
             <Text style={styles.text}>Let's Get Started</Text>
-        <Text style={{color:'#AAAAAA',marginLeft:30,fontWeight:'bold',marginBottom:5,marginTop:5}}>Phone no</Text>
+            <Input 
+        placeholder="Enter your email address"
+        label="Email" iconName="email-outline"
+        />
+        <Input 
+        placeholder="Enter your password"
+        label="Password" iconName="lock-outline"
+        password
+        />
+        <Button onPress={() => navigation.navigate('Home')} title="Sign up"/>
+        {/* <Text style={{color:'#AAAAAA',marginLeft:30,fontWeight:'bold',marginBottom:5,marginTop:5}}>Phone no</Text>
         <View style={styles.input2}>
                 <Entypo
                     name="phone"
@@ -92,7 +101,7 @@ function Signup({navigation}) {
            <Text style={styles.text1}>
              Sign up
            </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         
         <TouchableOpacity>
         <Image style={{ width:40, height:40, marginLeft:130, marginTop:20, elevation:5}}
@@ -116,8 +125,8 @@ function Signup({navigation}) {
 }
 const styles = StyleSheet.create({
     container:{
-        width:'100%',
-        height:'40%',
+        width,
+        height,
         backgroundColor:'white',
         marginTop:90,
         borderTopLeftRadius:30,
@@ -148,30 +157,6 @@ const styles = StyleSheet.create({
         color:'white',
         marginTop:-5
     },
-    input2:{
-    borderWidth:2,
-    borderColor:"#AAAAAA",
-    backgroundColor:'#ffff',
-    marginHorizontal:20,
-    borderRadius:12,
-    marginBottom:20,
-    flexDirection:"row",
-    justifyContent:"space-between",
-    alignContent:"center",
-    alignItems:"center",
-    paddingLeft:15,
-    elevation:3,
-    },
-    btn:{
-        backgroundColor:'#186DEE',
-        alignItems:'center',
-        justifyContent:'center',
-        width:'90%',
-        height:55,
-        padding:15,
-        borderRadius:12,
-        marginTop:40,
-        marginLeft:20
-    },
+   
 })
 export default Signup;

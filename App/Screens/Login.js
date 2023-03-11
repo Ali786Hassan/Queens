@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
 import { 
-View,StyleSheet,ImageBackground,Text,Dimensions,Alert, 
-TextInput,TouchableOpacity,
-SafeAreaView,Image,StatusBar,ScrollView} from 'react-native';
+View,StyleSheet,ImageBackground,Text,Dimensions,TouchableOpacity,
+SafeAreaView,Image,StatusBar} from 'react-native';
 import Colors from '../Assets/Config/colors';
-import Mail from 'react-native-vector-icons/Entypo';
-import Fontisto from 'react-native-vector-icons/Fontisto';
+import Input from '../Components/Input';
+import Button from '../Components/Button';
 import Usericon from 'react-native-vector-icons/Feather';
-import Entypo from 'react-native-vector-icons/Entypo';
 import Arrowleft from 'react-native-vector-icons/Feather';
 // const width = Dimensions.get('window').width ;
 const {width} = Dimensions.get('screen');
 const {height} = Dimensions.get('screen');
 function Login({navigation}) {
- const [firstName, onChangeFirstName] = useState('');
- const [password, onChangePassword] = useState('');
+
     return (
         
         <SafeAreaView
@@ -22,7 +19,7 @@ function Login({navigation}) {
         >
         <ImageBackground
         
-        style={{width:435,height:310}}
+        style={{width,height:height/2}}
         
         source={require('../Assets/Images/Rectangle.png')}>
          <StatusBar backgroundColor="#4C7FC1" />
@@ -43,60 +40,17 @@ function Login({navigation}) {
             <Text style={styles.text}>
                 Welcome back!
                 </Text>
-        <Text style={{color:'#AAAAAA',marginLeft:30,fontWeight:'bold',marginBottom:5,marginTop:15}}> Email</Text>
-        <View style={styles.input2}>
-                <Mail
-                    name="mail"
-                    color={'#AAAAAA'}
-                    size={22}
-                />
-                <TextInput
-                style={{
-                    width:"100%",
-                    color:"black"
-                }}
-                keyboardType="email-address"
-                value={firstName}
-                onChangeText={onChangeFirstName}
-                autoCapitalize='none'
-                autoCorrect={false}
-                clearButtonMode="always"
-                onBlur={() => Alert.alert("first name is blured")}
-                />
-            </View>
-            <Text style={{color:'#AAAAAA',marginLeft:30,fontWeight:'bold',marginBottom:5,marginTop:-5}}> Password</Text>
-            <View style={styles.input2}>
-                <Fontisto
-                    name="locked"
-                    color={'#AAAAAA'}
-                    size={20}
-                />
-                
-                <TextInput
-                style={{
-                    width:"100%",
-                    color:"black"
-                }}
-                    secureTextEntry={true}
-                    clearButtonMode="always"
-                    value={password}
-                    onChangeText={onChangePassword}
-                    textContentType="password"
-                />
-                
-            </View>
-            <Entypo
-                    style={{marginLeft:330,marginTop:-55}}
-                    name="eye-with-line"
-                    color={'#AAAAAA'}
-                    size={20}
-                />
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}
-            style={styles.btn}>
-           <Text style={styles.text1}>
-             Sign in
-           </Text>
-        </TouchableOpacity>
+        <Input 
+        placeholder="Enter your email address"
+        label="Email" iconName="email-outline"
+        />
+        <Input 
+        placeholder="Enter your password"
+        label="Password" iconName="lock-outline"
+        password
+        />
+        <Button onPress={() => navigation.navigate('Home')} title="Login"/>
+    
         <TouchableOpacity onPress={() => navigation.navigate('Reset')}>
         <Text style={{color:'gray',marginLeft:230,fontWeight:'bold',marginTop:10,fontSize:15,color:Colors.Google1}}>Forgot Password?</Text>
         </TouchableOpacity>
@@ -122,8 +76,8 @@ function Login({navigation}) {
 }
 const styles = StyleSheet.create({
     container:{
-        width:'100%',
-        height:'40%',
+        width,
+        height,
         backgroundColor:'#ffffff',
         marginTop:90,
         borderTopLeftRadius:30,
@@ -166,12 +120,12 @@ const styles = StyleSheet.create({
         backgroundColor:'#186DEE',
         alignItems:'center',
         justifyContent:'center',
-        width:'90%',
+        width:'70%',
         height:55,
         padding:15,
         borderRadius:12,
         marginTop:50,
-        marginLeft:20
+        marginLeft:30
     },
 })
 export default Login;

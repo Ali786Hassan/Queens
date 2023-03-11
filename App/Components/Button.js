@@ -7,14 +7,15 @@ const Button = ({title, onPress = () => {}}) => {
     <TouchableOpacity onPress={onPress}
      style={{
         height:55,
-        width:'100%',
+        width:'90%',
+        alignSelf:'center',
         backgroundColor:colors.Google1,
         justifyContent:'center',
         alignItems:'center',
         borderRadius:25,
         marginTop:15
      }}>
-      <Text style={{color:colors.white,fontWeight:'bold',fontSize:18}}>{title}</Text>
+      <Text style={{color:colors.white,fontWeight:'bold',fontSize:20}}>{title}</Text>
     </TouchableOpacity>
   )
 }

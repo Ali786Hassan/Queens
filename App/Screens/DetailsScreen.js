@@ -62,7 +62,7 @@ const DetailsScreen = ({navigation, route}) => {
           </Text>
           <View
             style={{
-              marginTop: 20,
+              //marginTop: 20,
               flexDirection: 'row',
               justifyContent: 'space-between',
             }}>

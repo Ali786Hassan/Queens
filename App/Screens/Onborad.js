@@ -1,17 +1,20 @@
 import React from 'react';
-import {View,StyleSheet,ImageBackground,StatusBar,Text,TouchableOpacity, Image} from 'react-native';
+import {View,StyleSheet,ImageBackground,StatusBar,Text,TouchableOpacity,Dimensions, Image} from 'react-native';
 import Swiper from 'react-native-swiper';
 import colors from '../Assets/Config/colors';
+const {width} = Dimensions.get('screen');
+const {height} = Dimensions.get('screen');
 import Login from './Login';
 const Onboard = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
       <StatusBar translucent backgroundColor="#4C7FC1" />
       <ImageBackground
-        style={{flex: 1}}
+        style={{flex: 1,width,height,}}
         source={require('../Assets/Images/android.png')}>
           {/* <View style={{alignSelf:'center',backgroundColor:"white",height:"30%",width:"90%",marginTop:"15%",borderRadius:30}}> */}
             <Swiper
+            style={{width,height:height-10}}
             loop
             autoplay
             autoplayTimeout={3}
@@ -48,25 +51,7 @@ const Onboard = ({navigation}) => {
           source={require('../Assets/Images/Vector4.png')}/>
         </View>
             </Swiper>
-            {/* </View> */}
-          {/* <Swiper style={{}}>
-        
-        <View >
-        <Image 
-          source={require('../Assets/Images/bag4.png')}/>
-        </View>
-        <View >
-        <Image 
-          source={require('../Assets/Images/bag5.png')}/>
-        </View>
-          </Swiper> */}
-          
-        {/* <View style={{width:190,height:190,backgroundColor:'white',marginLeft:100,marginTop:70,borderRadius:100,borderColor:'#186DEE',borderWidth:3}}>
-        <Image 
-         style={{width:180,height:180,marginLeft:3,marginTop:3,borderRadius:100}}
-         source={require('../Assets/Images/bag2.png')}>
-        </Image>
-        </View> */}
+           
         <View style={style.details}>
           <Text style={{color: colors.white,fontFamily:'Merriweather-Bold', fontSize: 45, fontWeight: 'bold',marginTop:30,marginLeft:-10}}>
             Online Shop

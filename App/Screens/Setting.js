@@ -81,14 +81,16 @@ export default function Setting({navigation}) {
       </RBSheet>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={{marginTop:10,justifyContent:'center',alignItems:'center'}}>
-          <Text style={{fontSize: 32,fontWeight: '700',color:'#333',}}>Settings</Text>
-          <Arrowleft
+        {/* <Arrowleft
                     onPress={()=>  navigation.goBack()} 
-                    style={{marginTop:-30,alignSelf:'center',marginLeft:-360}}
+                    style={{marginTop:10,alignSelf:'center',marginLeft:-360}}
                     name="arrow-left-circle"
                     color={'black'}
                     size={30}
-                />
+                /> */}
+         
+          <Text style={{fontSize: 32,fontWeight: '700',color:'#333',}}>Settings</Text>
+         
         </View>
 
         <View style={styles.profile}>
