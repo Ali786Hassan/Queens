@@ -1,10 +1,9 @@
 import React from 'react';
-import { View,StyleSheet,ImageBackground,Text, TextInput,TouchableOpacity,Dimensions,SafeAreaView,StatusBar} from 'react-native';
+import { View,StyleSheet,ImageBackground,Text,Alert,Dimensions,SafeAreaView,StatusBar} from 'react-native';
 import colors from '../Assets/Config/colors';
-import Mail from 'react-native-vector-icons/Fontisto';
-import Fontisto from 'react-native-vector-icons/Fontisto';
+import Input from '../Components/Input';
+import Button from '../Components/Button';
 import Usericon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Entypo from 'react-native-vector-icons/Entypo';
 import Arrowleft from 'react-native-vector-icons/Feather';
 const {width} = Dimensions.get('screen');
 const {height} = Dimensions.get('screen');
@@ -12,77 +11,46 @@ function Reset({navigation}) {
     return (
         <SafeAreaView style={styles.con}>
         <ImageBackground
-        style={{width:435,height:330}}
+        style={{width,height:height/3}}
         source={require('../Assets/Images/Rectangle.png')}>
         <StatusBar backgroundColor="#4C7FC1" />
+        <View style={{marginTop:30,marginBottom:-20,marginLeft:25}}>
         <Arrowleft
-                    onPress={()=>  navigation.goBack()} 
-                    style={{marginTop:10,alignSelf:'center',marginTop:60,marginLeft:-330}}
+                    onPress={()=>  navigation.goBack()}
                     name="arrow-left-circle"
                     color={'white'}
                     size={30}
                 />
+        </View>
+        <View style={{alignSelf:'center',marginTop:10}}>
           <Usericon
-                    style={{alignSelf:'center',marginTop:10,marginRight:10,marginBottom:-5}}
+                    
                     name="lock-reset"
                     color={'white'}
                     size={120}
                 />
+        </View>
           <View style={styles.container}>
             <Text style={styles.text}>Create new password</Text>
            
-        <Text style={{color:'#AAAAAA',marginLeft:30,fontWeight:'bold',marginBottom:5,marginTop:15}}> Email</Text>
-        <View style={styles.input2}>
-                <Mail
-                    name="locked"
-                    color={'#AAAAAA'}
-                    size={20}
-                />
-                <TextInput
-                style={{
-                    width:"100%",
-                    color:"black"
-                }}
-                secureTextEntry={true}
-                textContentType="password"
-                />
-            </View>
-            <Entypo
-                    style={{marginLeft:330,marginTop:-55}}
-                    name="eye-with-line"
-                    color={'#AAAAAA'}
-                    size={20}
-                />
-            <Text style={{color:'#AAAAAA',marginLeft:30,fontWeight:'bold',marginBottom:5,marginTop:30}}> Password</Text>
-            <View style={styles.input2}>
-                <Fontisto
-                    name="locked"
-                    color={'#AAAAAA'}
-                    size={20}
-                />
-                
-                <TextInput
-                style={{
-                    width:"100%",
-                    color:"black"
-                }}
-                    secureTextEntry={true}
-                    textContentType="password"
-                />
-                
-            </View>
-            <Entypo
-                    style={{marginLeft:330,marginTop:-55}}
-                    name="eye-with-line"
-                    color={'#AAAAAA'}
-                    size={20}
-                />
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}
-            style={styles.btn}>
-           <Text style={styles.text1}>
-             Create
-           </Text>
-        </TouchableOpacity>
+        <Input 
+        placeholder="Enter your email address"
+        label="Old Password" iconName="lock-outline"
+        password
+        />
+        <Input 
+        placeholder="Enter your email address"
+        label="Enter New Password" iconName="lock-outline"
+        password
+        />
+        <Input 
+        placeholder="Enter your password"
+        label="Re-type Password" iconName="lock-outline"
+        password
+        />
+        <Button onPress={() => {
+          Alert.alert("Password sucessfully created");
+        }} title="Create"/>
           </View>
         </ImageBackground>
         </SafeAreaView>
@@ -90,17 +58,15 @@ function Reset({navigation}) {
 }
 const styles = StyleSheet.create({
     container:{
-        width:'100%',
-        height:'40%',
+        width,
+        height: height/2,
         backgroundColor:'white',
-        marginTop:90,
+        marginTop:60,
         borderTopLeftRadius:30,
         borderTopRightRadius:30
     },
     con:{
         flex:1,
-        width,
-        height,
         backgroundColor:"#fff",
     },
     text:{

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
 View,StyleSheet,ImageBackground,Text,Dimensions,TouchableOpacity,
 SafeAreaView,Image,StatusBar} from 'react-native';
@@ -7,7 +7,6 @@ import Input from '../Components/Input';
 import Button from '../Components/Button';
 import Usericon from 'react-native-vector-icons/Feather';
 import Arrowleft from 'react-native-vector-icons/Feather';
-// const width = Dimensions.get('window').width ;
 const {width} = Dimensions.get('screen');
 const {height} = Dimensions.get('screen');
 function Login({navigation}) {
@@ -19,27 +18,32 @@ function Login({navigation}) {
         >
         <ImageBackground
         
-        style={{width,height:height/2}}
+        style={{width,height:height/3}}
         
         source={require('../Assets/Images/Rectangle.png')}>
          <StatusBar backgroundColor="#4C7FC1" />
+        <View style={{marginTop:30,marginBottom:-20,marginLeft:25}}>
         <Arrowleft
                     onPress={()=>  navigation.goBack()} 
-                    style={{marginTop:10,alignSelf:'center',marginTop:60,marginLeft:-330}}
+                    
                     name="arrow-left-circle"
                     color={'white'}
                     size={30}
                 />
+        </View>
+        <View style={{alignSelf:'center',marginTop:10}}>
           <Usericon
-                    style={{alignSelf:'center',marginTop:10}}
+                    
                     name="user"
                     color={'white'}
                     size={100}
                 />
+        </View>
           <View style={styles.container}>
             <Text style={styles.text}>
                 Welcome back!
-                </Text>
+            </Text>
+       
         <Input 
         placeholder="Enter your email address"
         label="Email" iconName="email-outline"
@@ -77,16 +81,14 @@ function Login({navigation}) {
 const styles = StyleSheet.create({
     container:{
         width,
-        height,
+        height:height/2,
         backgroundColor:'#ffffff',
-        marginTop:90,
+        marginTop:60,
         borderTopLeftRadius:30,
         borderTopRightRadius:30,
     },
     con:{
         flex:1,
-        height,
-        width,
         backgroundColor:"#fff",
     },
     text:{

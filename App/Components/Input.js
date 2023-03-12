@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     label:{
         marginVertical:5,
         fontSize:14,
-        margin:20,
+        margin:35,
         color:colors.lightgray,
     },
     inputContainer:{

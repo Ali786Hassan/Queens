@@ -13,7 +13,7 @@ const Button = ({title, onPress = () => {}}) => {
         justifyContent:'center',
         alignItems:'center',
         borderRadius:25,
-        marginTop:15
+        marginTop:20
      }}>
       <Text style={{color:colors.white,fontWeight:'bold',fontSize:20}}>{title}</Text>
     </TouchableOpacity>
